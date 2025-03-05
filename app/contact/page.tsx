@@ -5,27 +5,25 @@ import {
   FaWhatsapp,
   FaInstagram,
   FaFacebook,
-  FaTwitter,
   FaAmazon,
+  FaEnvelope,
 } from "react-icons/fa";
-
 import Link from "next/link";
 import MapSection from "../components/MapSection";
 
 const ContactPage = () => {
   const socialLinks = [
-    { icon: FaInstagram, href: "#", label: "Instagram" },
-    { icon: FaFacebook, href: "#", label: "Facebook" },
-    { icon: FaTwitter, href: "#", label: "Twitter" },
-    { icon: FaAmazon, href: "#", label: "Amazon Store" },
+    { icon: FaAmazon, href: "/coming-soon", label: "Amazon" },
+    { icon: FaFacebook, href: "/coming-soon", label: "Facebook" },
     {
-      icon: () => (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-4-8c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4z" />
-        </svg>
-      ),
-      href: "#",
-      label: "Noon Store",
+      icon: FaInstagram,
+      href: "https://www.instagram.com/wakthswaheh",
+      label: "Instagram",
+    },
+    {
+      icon: FaEnvelope,
+      href: "mailto:wakthswaheh@gmail.com",
+      label: "Mail",
     },
   ];
 
@@ -38,33 +36,36 @@ const ContactPage = () => {
         className="max-w-3xl mx-auto space-y-12"
       >
         <h1 className="text-4xl font-bold text-center mb-8">Contact Us</h1>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
           {socialLinks.map((link, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="flex justify-center"
             >
               <Link
                 href={link.href}
-                className="flex flex-col items-center justify-center p-4 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 transition-all duration-300"
+                className="flex flex-col items-center justify-center p-5 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/50"
               >
-                {link.icon()}
+                {link.icon &&
+                  React.createElement(link.icon, {
+                    className: "w-10 h-10 mb-3",
+                  })}
                 <span className="text-sm">{link.label}</span>
               </Link>
             </motion.div>
           ))}
         </div>
 
-        <div className="text-center">
+        <div className="text-center mt-12">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
-              href="https://wa.me/+971589901394"
-              className="inline-block bg-green-500 text-white py-3 px-6 rounded-full hover:bg-green-600 transition-colors duration-300"
+              href="https://wa.me/+971508099722"
+              className="inline-flex items-center justify-center bg-green-500 text-white py-3 px-8 rounded-full hover:bg-green-600 transition-colors duration-300"
             >
-              <icon : FaWhatsapp className="inline-block mr-2" />
-              Contact us on WhatsApp
+              <FaWhatsapp className="mr-2 text-xl" />
+              <span>WhatsApp</span>
             </Link>
           </motion.div>
         </div>

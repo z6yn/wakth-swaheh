@@ -1,13 +1,14 @@
-import Link from 'next/link'
-import React from 'react'
+"use client";
+import Link from "next/link";
+import React from "react";
 
 const Footer = () => {
   const quickLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/collections', label: 'Collections' },
-    { href: '/contact', label: 'Contact' },
-  ]
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/collections", label: "Collections" },
+    { href: "/contact", label: "Contact" },
+  ];
 
   return (
     <footer className="bg-black bg-opacity-90 text-white py-8">
@@ -18,7 +19,10 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="hover:text-gray-300 transition-colors">
+                  <Link
+                    href={link.href}
+                    className="hover:text-gray-300 transition-colors"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -27,29 +31,28 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="text-xl font-serif font-bold mb-4">Contact Us</h3>
-            <p>Email: info@wakthswaheh.com</p>
-            <p>Phone: +971 4 123 4567</p>
-            <p>Address: Deira, Dubai, UAE</p>
+            <p>Email: wakthswaheh@gmail.com</p>
+            <p>Phone: +971 50 809 9722</p>
+            <p>Address: Al Qouz, Dubai, United Arab Emirates</p>
           </div>
         </div>
         <div className="mt-8 pt-4 border-t border-gray-800 text-center">
-          <p>&copy; 2024 Wakth Swaheh. All rights reserved.</p>
+          <p>&copy; 2025 Wakth Swaheh. All rights reserved.</p>
           <p className="mt-2 text-sm text-gray-400">
-            Powered by{' '}
+            Powered by{" "}
             <a
-              href="z6yn.github.io/zay"
+              href="https://z6yn.github.io/zay"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition-colors"
             >
-              Aztec Technologies.
+              ZayTech.
             </a>
           </p>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
-
+export default Footer;

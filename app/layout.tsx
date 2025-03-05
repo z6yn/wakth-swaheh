@@ -1,10 +1,10 @@
-import "./globals.css";
-import React from "react";
+import "../styles/globals.css";
 import { Inter, Playfair_Display } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import WhatsAppButton from "./components/WhatsAppButton";
-import BackgroundAnimation from "./components/BackgroundAnimation";
+import ClientComponents from "./components/ClientComponents";
+import type { ReactNode } from "react";
+import CustomCursor from "./components/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({
@@ -13,26 +13,22 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: "Wakth Swaheh - Premium Quality Watches",
+  title: "Wakth Swaheh Watches",
   description:
-    "Discover exquisite timepieces at Wakth Swaheh, your premier destination for watches.",
+    "Discover exquisite timepieces at Wakth Swaheh, your destination for watches.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body
         className={`${inter.variable} ${playfair.variable} font-sans bg-black text-white flex flex-col min-h-screen`}
-      >
-        <BackgroundAnimation />
+      ><CustomCursor />
+        <ClientComponents />
+        
         <Header />
         <div className="flex-grow pt-16">{children}</div>
         <Footer />
-        <WhatsAppButton />
       </body>
     </html>
   );
