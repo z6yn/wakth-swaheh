@@ -78,7 +78,7 @@ export default function WatchModal({ watch, onClose }: WatchModalProps) {
           initial={{ scale: 0.9, y: 20 }}
           animate={{ scale: 1, y: 0 }}
           exit={{ scale: 0.9, y: 20 }}
-          className="bg-gray-900 rounded-lg p-6 max-w-lg w-full"
+          className="bg-white rounded-lg p-6 max-w-lg w-full"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="relative h-64 mb-4">
@@ -118,7 +118,7 @@ export default function WatchModal({ watch, onClose }: WatchModalProps) {
           </button>
           <button
             onClick={handleViewImageClick}
-            className="bg-blue-600 text-white px-4 py-2 rounded-full w-full hover:bg-blue-700 transition-colors duration-300 mb-4"
+            className="bg-gray-600 text-white px-4 py-2 rounded-full w-full hover:bg-blue-700 transition-colors duration-300 mb-4"
           >
             View Full Image
           </button>

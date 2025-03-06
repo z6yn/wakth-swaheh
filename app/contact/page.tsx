@@ -20,11 +20,11 @@ const ContactPage = () => {
       href: "https://www.instagram.com/wakthswaheh",
       label: "Instagram",
     },
-    {
+    /* {
       icon: FaEnvelope,
       href: "mailto:wakthswaheh@gmail.com",
       label: "Mail",
-    },
+    }, */
   ];
 
   return (
