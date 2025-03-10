@@ -28,7 +28,7 @@ const ImageModal = ({
       initial={{ scale: 0.9, y: 20 }}
       animate={{ scale: 1, y: 0 }}
       exit={{ scale: 0.9, y: 20 }}
-      className="bg-gray-900 rounded-lg p-6 max-w-3xl w-full"
+      className="bg-white rounded-lg p-6 max-w-3xl w-full"
       onClick={(e) => e.stopPropagation()}
     >
       <div className="relative h-96">
@@ -42,7 +42,7 @@ const ImageModal = ({
       </div>
       <button
         onClick={onClose}
-        className="mt-4 text-gray-400 hover:text-white transition-colors duration-300"
+        className="mt-4 text-gray-700 hover:text-black transition-colors duration-300"
       >
         Close
       </button>
@@ -56,7 +56,7 @@ export default function WatchModal({ watch, onClose }: WatchModalProps) {
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(
-      `Hello, I'm interested in purchasing the ${watch.brand} ${watch.model}. Could you please provide more information?`
+      `Hello, I'm interested in purchasing the ${watch.brand} ${watch.model}. Could you please provide me with more information?`
     );
     window.open(`https://wa.me/+971508099722?text=${message}`, "_blank");
   };
@@ -78,7 +78,7 @@ export default function WatchModal({ watch, onClose }: WatchModalProps) {
           initial={{ scale: 0.9, y: 20 }}
           animate={{ scale: 1, y: 0 }}
           exit={{ scale: 0.9, y: 20 }}
-          className="bg-white rounded-lg p-6 max-w-lg w-full"
+          className="bg-white rounded-lg p-6 max-w-fit w-fit"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="relative h-64 mb-4">
@@ -86,7 +86,7 @@ export default function WatchModal({ watch, onClose }: WatchModalProps) {
               src={watch.image || "/placeholder.svg"}
               alt={`${watch.brand} ${watch.model}`}
               layout="fill"
-              objectFit="cover"
+              objectFit="contain"
               className="rounded-lg"
             />
           </div>
@@ -116,15 +116,15 @@ export default function WatchModal({ watch, onClose }: WatchModalProps) {
           >
             Inquire on WhatsApp
           </button>
-          <button
+          {<button
             onClick={handleViewImageClick}
-            className="bg-gray-600 text-white px-4 py-2 rounded-full w-full hover:bg-blue-700 transition-colors duration-300 mb-4"
+            className="bg-red-600 text-white px-4 py-2 rounded-full w-full hover:bg-red-700 transition-colors duration-300 mb-4"
           >
             View Full Image
-          </button>
+          </button>}
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-white transition-colors duration-300"
+            className="text-gray-700 hover:text-white transition-colors duration-300"
           >
             Close
           </button>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
-import logo from "../assets/logo_1.png";
+import logo from "../assets/logo_bg.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

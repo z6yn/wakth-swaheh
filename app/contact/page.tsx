@@ -20,11 +20,11 @@ const ContactPage = () => {
       href: "https://www.instagram.com/wakthswaheh",
       label: "Instagram",
     },
-    /* {
+    {
       icon: FaEnvelope,
       href: "mailto:wakthswaheh@gmail.com",
       label: "Mail",
-    }, */
+    },
   ];
 
   return (
@@ -36,7 +36,7 @@ const ContactPage = () => {
         className="max-w-3xl mx-auto space-y-12"
       >
         <h1 className="text-4xl font-bold text-center mb-8">Contact Us</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+        <div className="flex flex-wrap justify-center gap-10">
           {socialLinks.map((link, index) => (
             <motion.div
               key={index}
@@ -46,7 +46,7 @@ const ContactPage = () => {
             >
               <Link
                 href={link.href}
-                className="flex flex-col items-center justify-center p-5 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/50"
+                className="flex flex-col items-center justify-center w-24 h-24 p-5 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/50"
               >
                 {link.icon &&
                   React.createElement(link.icon, {

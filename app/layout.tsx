@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ClientComponents from "./components/ClientComponents";
 import type { ReactNode } from "react";
-import CustomCursor from "./components/CustomCursor";
+//import CustomCursor from "./components/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({
@@ -23,7 +23,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body
         className={`${inter.variable} ${playfair.variable} font-sans bg-black text-white flex flex-col min-h-screen`}
-      ><CustomCursor />
+      > 
+      {/* <CustomCursor /> */}
         <ClientComponents />
         
         <Header />

@@ -13,7 +13,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex-grow flex flex-col justify-center items-center text-white p-4 min-h-screen bg-black">
+    <main className="flex-grow flex flex-col justify-center items-center text-white
+     p-4 min-h-screen bg-black">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
@@ -28,7 +29,7 @@ export default function Home() {
         </p>
         <Link
           href="/collections"
-          className="inline-block bg-white text-black font-inter text-sm uppercase tracking-wider py-3 px-8 border border-transparent hover:border-white hover:bg-black hover:text-white transition-colors duration-300"
+          className="inline-block bg-white text-black first-letter:font-inter text-sm uppercase tracking-wider py-3 px-8 border border-transparent hover:border-white hover:bg-black hover:text-white transition-colors duration-300"
           //className="inline-block bg-white text-black font-inter text-sm md:text-base uppercase tracking-wider py-3 px-8 md:py-4 md:px-10 border border-white hover:bg-black hover:text-white transition-colors duration-300"
         >
           Explore Our Collection

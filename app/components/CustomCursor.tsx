@@ -1,4 +1,4 @@
-"use client"
+/* "use client"
 
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
@@ -59,3 +59,4 @@ const CustomCursor = () => {
 
 export default CustomCursor
 
+ */

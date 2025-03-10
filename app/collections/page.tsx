@@ -13,7 +13,7 @@ const watches: Watch[] = [
     model: "3564G5SUN",
     name: "BLADE 3564G5SUN",
     description: "VERVE WHITE - SS",
-    actualRate: 523.82,
+    actualRate: 525.00,
     image: "/assets/watches/3564G5SUN.jpg",
   },
   {
@@ -22,11 +22,29 @@ const watches: Watch[] = [
     model: "3613G1SBO",
     name: "BLADE 3613G1SBO",
     description: "MEN'S 43MM SS",
-    actualRate: 561.9,
+    actualRate: 560.00,
     image: "/assets/watches/3613G1SBO.jpg",
   },
   {
     id: 3,
+    brand: "BLADE",
+    model: "3646G2SUS",
+    name: "BLADE 3646G2SUS",
+    description: "FORTE SS MONO",
+    actualRate: 845.00,
+    image: "/assets/watches/3646G2SUS.jpg",
+  },
+  {
+    id: 4,
+    brand: "CASIO",
+    model: "F-91W",
+    name: "CASIO F-91W",
+    description: "FORTE SS MONO",
+    actualRate: 75.00,
+    image: "/assets/watches/CasioF91W.jpg",
+  },
+  {
+    id: 5,
     brand: "BLADE",
     model: "3646G2SUS",
     name: "BLADE 3646G2SUS",
@@ -70,12 +88,12 @@ export default function CollectionsPage() {
               />
             </div>
             <div className="p-4">
-              <h2 className="text-xl font-playfair font-semibold mb-2 text-amber-500">
+              <h2 className="text-xl font-playfair font-semibold mb-2 text-red-800">
                 {watch.brand} {watch.model}
               </h2>
-              <p className="text-gray-300 mb-4">{watch.description}</p>
+              <p className="text-gray-600 mb-4">{watch.description}</p>
               <div className="flex justify-between items-center">
-                <p className="text-gray-400 line-through">
+                <p className="text-gray-500 line-through">
                   AED {watch.actualRate ? watch.actualRate.toFixed(2) : "N/A"}
                 </p>
                 <p className="text-black font-bold text-lg">
