@@ -10,47 +10,56 @@ const watches: Watch[] = [
   {
     id: 1,
     brand: "BLADE",
-    model: "3564G5SUN",
+    model: "Verve White 3564G5SUN",
     name: "BLADE 3564G5SUN",
-    description: "VERVE WHITE - SS",
-    actualRate: 525.00,
-    image: "/assets/watches/3564G5SUN.jpg",
+    description: "CHRONOGRAPH MEN'S WATCH",
+    actualRate: 525.0,
+    image: "/assets/watches/3564G5SUN.png",
   },
   {
     id: 2,
     brand: "BLADE",
-    model: "3613G1SBO",
+    model: "Bare Blue 3613G1SBO",
     name: "BLADE 3613G1SBO",
-    description: "MEN'S 43MM SS",
-    actualRate: 560.00,
-    image: "/assets/watches/3613G1SBO.jpg",
+    description: "MEN'S 43MM SS MEN'S WATCH",
+    actualRate: 560.0,
+    image: "/assets/watches/3613G1SBO.png",
   },
   {
     id: 3,
     brand: "BLADE",
-    model: "3646G2SUS",
+    model: "FORTE SS MONO 3646G2SUS",
     name: "BLADE 3646G2SUS",
-    description: "FORTE SS MONO",
-    actualRate: 845.00,
-    image: "/assets/watches/3646G2SUS.jpg",
+    description: "MULTIFUNCTION MEN'S WATCH",
+    actualRate: 845.0,
+    image: "/assets/watches/3646G2SUS.png",
   },
   {
     id: 4,
     brand: "CASIO",
     model: "F-91W",
     name: "CASIO F-91W",
-    description: "FORTE SS MONO",
-    actualRate: 75.00,
-    image: "/assets/watches/CasioF91W.jpg",
+    description: "Classic Digital Watch",
+    actualRate: 89.0,
+    image: "/assets/watches/CasioF91W.png",
   },
   {
     id: 5,
-    brand: "BLADE",
-    model: "3646G2SUS",
-    name: "BLADE 3646G2SUS",
-    description: "FORTE SS MONO",
-    actualRate: 847.62,
-    image: "/assets/watches/3646G2SUS.jpg",
+    brand: "CASIO",
+    model: "WS-1600H-1AV",
+    name: "WS-1600H-1AV",
+    description: "Men's Digital Watch",
+    actualRate: 125.0,
+    image: "/assets/watches/Casio1600H.png",
+  },
+  {
+    id: 6,
+    brand: "CASIO",
+    model: "AE-1200WHL-5AV",
+    name: "AE-1200WHL-5AV",
+    description: "Men's Digital Watch",
+    actualRate: 285.0,
+    image: "/assets/watches/Casio1200WHL.png",
   },
 ];
 
@@ -58,7 +67,8 @@ export default function CollectionsPage() {
   const [selectedWatch, setSelectedWatch] = useState<Watch | null>(null);
 
   return (
-    <main className="flex-grow bg-white text-black min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+    <main className="flex-grow text-black min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+      {/* <main className="flex-grow text-white min-h-screen py-20 px-4 sm:px-6 lg:px-8"> */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -88,12 +98,12 @@ export default function CollectionsPage() {
               />
             </div>
             <div className="p-4">
-              <h2 className="text-xl font-playfair font-semibold mb-2 text-red-800">
+              <h2 className="text-xl font-inter font-semibold mb-2 text-red-800">
                 {watch.brand} {watch.model}
               </h2>
               <p className="text-gray-600 mb-4">{watch.description}</p>
               <div className="flex justify-between items-center">
-                <p className="text-gray-500 line-through">
+                <p className="text-gray-600 line-through">
                   AED {watch.actualRate ? watch.actualRate.toFixed(2) : "N/A"}
                 </p>
                 <p className="text-black font-bold text-lg">

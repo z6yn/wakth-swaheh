@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function ComingSoonPage() {
   return (
-    <main className="flex-grow flex items-center justify-center min-h-screen bg-black text-white p-4">
+    <main className="flex-grow flex items-center justify-center min-h-screen text-white p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -14,7 +14,7 @@ export default function ComingSoonPage() {
         className="text-center max-w-2xl"
       >
         <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
-          Coming Soon
+          Coming Soon!!
         </h1>
         <p className="text-lg md:text-xl mb-8">
           We're working on something exciting! This feature will be available

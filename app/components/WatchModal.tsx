@@ -90,15 +90,15 @@ export default function WatchModal({ watch, onClose }: WatchModalProps) {
               className="rounded-lg"
             />
           </div>
-          <h2 className="text-2xl font-playfair font-bold mb-2">
+          <h2 className="text-black text-2xl font-inter font-bold mb-2">
             {watch.brand} {watch.model}
           </h2>
-          <p className="text-gray-400 mb-2">{watch.description}</p>
-          <p className="text-2xl font-bold mb-4">
+          <p className="text-gray-700 mb-2">{watch.description}</p>
+          <p className="text-2xl text-black font-bold mb-4">
             AED {watch.actualRate ? watch.actualRate.toFixed(2) : "N/A"}
           </p>
           <div className="flex items-center mb-4">
-            <label htmlFor="quantity" className="mr-2">
+            <label htmlFor="quantity" className="mr-2 text-black">
               Quantity:
             </label>
             <input
@@ -107,24 +107,26 @@ export default function WatchModal({ watch, onClose }: WatchModalProps) {
               min="1"
               value={quantity}
               onChange={(e) => setQuantity(Number(e.target.value))}
-              className="bg-gray-800 text-white px-2 py-1 rounded w-16"
+              className="bg-gray-600 text-white px-2 py-1 rounded w-16"
             />
           </div>
           <button
             onClick={handleWhatsAppClick}
-            className="bg-green-600 text-white px-4 py-2 rounded-full w-full hover:bg-green-700 transition-colors duration-300 mb-4"
+            className="bg-black text-white px-4 py-2 rounded-full w-full hover:bg-green-200  hover:text-black transition-colors duration-300 mb-4"
           >
             Inquire on WhatsApp
           </button>
-          {<button
-            onClick={handleViewImageClick}
-            className="bg-red-600 text-white px-4 py-2 rounded-full w-full hover:bg-red-700 transition-colors duration-300 mb-4"
-          >
-            View Full Image
-          </button>}
+          {
+            <button
+              onClick={handleViewImageClick}
+              className="bg-black text-white px-4 py-2 rounded-full w-full hover:bg-blue-300 hover:text-black  transition-colors duration-300 mb-4"
+            >
+              View Image
+            </button>
+          }
           <button
             onClick={onClose}
-            className="text-gray-700 hover:text-white transition-colors duration-300"
+            className="text-black hover:text-gray-300 transition-colors duration-300"
           >
             Close
           </button>

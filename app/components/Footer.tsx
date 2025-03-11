@@ -37,7 +37,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-8 pt-4 border-t border-gray-800 text-center">
-          <p>&copy; 2025 Wakth Swaheh. All rights reserved.</p>
+          <p>&copy; 2025 Wakth Swaheh for Watches Co.L.L.C. All rights reserved.</p>
           <p className="mt-2 text-sm text-gray-400">
             Powered by{" "}
             <a
@@ -46,7 +46,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="hover:text-white transition-colors"
             >
-              ZayTech.
+              Zay.
             </a>
           </p>
         </div>
