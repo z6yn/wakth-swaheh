@@ -47,14 +47,10 @@ const branches = [
 ];
 
 const MapSection = () => {
-  const [hoveredStore, setHoveredStore] = useState<string | null>(null);
+  const [selectedStore, setSelectedStore] = useState<string | null>(null);
 
-  const handleStoreHover = (store: string) => {
-    setHoveredStore(store);
-  };
-
-  const handleStoreLeave = () => {
-    setHoveredStore(null);
+  const handleStoreClick = (store: string) => {
+    setSelectedStore(store === selectedStore ? null : store);
   };
 
   return (
@@ -76,10 +72,9 @@ const MapSection = () => {
               {branch.stores.map((store) => (
                 <motion.div
                   key={store.name}
-                  onMouseEnter={() => handleStoreHover(store.name)}
-                  onMouseLeave={handleStoreLeave}
-                  className={`w-full p-4 rounded-lg transition-all duration-300 text-left ${
-                    hoveredStore === store.name
+                  onClick={() => handleStoreClick(store.name)}
+                  className={`w-full p-4 rounded-lg transition-all duration-300 text-left cursor-pointer ${
+                    selectedStore === store.name
                       ? "bg-white text-black"
                       : "bg-white bg-opacity-10 text-white hover:bg-opacity-20"
                   }`}
@@ -91,7 +86,7 @@ const MapSection = () => {
                       {store.name}
                     </h4>
                     <AnimatePresence>
-                      {hoveredStore === store.name && (
+                      {selectedStore === store.name && (
                         <motion.div
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
@@ -122,7 +117,7 @@ const MapSection = () => {
         ))}
       </div>
       <AnimatePresence>
-        {hoveredStore && (
+        {selectedStore && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
@@ -133,12 +128,11 @@ const MapSection = () => {
             <iframe
               width="100%"
               height="100%"
-              frameBorder="0"
               style={{ border: 0 }}
               src={
                 branches
                   .flatMap((branch) => branch.stores)
-                  .find((store) => store.name === hoveredStore)?.mapLink
+                  .find((store) => store.name === selectedStore)?.mapLink
               }
               allowFullScreen
             ></iframe>

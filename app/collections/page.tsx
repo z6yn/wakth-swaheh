@@ -67,8 +67,7 @@ export default function CollectionsPage() {
   const [selectedWatch, setSelectedWatch] = useState<Watch | null>(null);
 
   return (
-    <main className="flex-grow text-black min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-      {/* <main className="flex-grow text-white min-h-screen py-20 px-4 sm:px-6 lg:px-8"> */}
+    <main className="flex-grow text-white min-h-screen py-20 px-4 sm:px-6 lg:px-8">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -95,6 +94,7 @@ export default function CollectionsPage() {
                 layout="fill"
                 objectFit="contain"
                 className="transition-transform duration-300 transform hover:scale-110"
+                priority={false}
               />
             </div>
             <div className="p-4">

@@ -2,6 +2,12 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 
+// Seeded random number generator
+function seededRandom(seed: number) {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
 const BackgroundAnimation = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -23,13 +29,14 @@ const BackgroundAnimation = () => {
       speedY: number;
     }[] = [];
 
+    const seed = 42; // You can change the seed value to any number
     for (let i = 0; i < 50; i++) {
       particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 3 + 1,
-        speedX: Math.random() * 0.5 - 0.25,
-        speedY: Math.random() * 0.5 - 0.25,
+        x: seededRandom(seed + i) * canvas.width,
+        y: seededRandom(seed + i + 1) * canvas.height,
+        size: seededRandom(seed + i + 2) * 3 + 1,
+        speedX: seededRandom(seed + i + 3) * 0.5 - 0.25,
+        speedY: seededRandom(seed + i + 4) * 0.5 - 0.25,
       });
     }
 
@@ -37,8 +44,7 @@ const BackgroundAnimation = () => {
       if (!ctx || !canvas) return;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
-      // ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+      ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
 
       particles.forEach((particle) => {
         ctx.beginPath();

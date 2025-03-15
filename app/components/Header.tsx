@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
-import logo from "../assets/logo_1.png";
+import logo from "../assets/logo_bw.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,6 +57,7 @@ const Header = () => {
             alt="Wakth Swaheh"
             width={220}
             height={70}
+            priority={true}
           />
         </Link>
         <div className="hidden md:flex space-x-6">

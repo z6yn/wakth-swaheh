@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import {
@@ -47,6 +48,7 @@ const ContactPage = () => {
               <Link
                 href={link.href}
                 className="flex flex-col items-center justify-center w-24 h-24 p-5 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/50"
+                //className="flex flex-col items-center justify-center w-24 h-24 p-5 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/50"
               >
                 {link.icon &&
                   React.createElement(link.icon, {
